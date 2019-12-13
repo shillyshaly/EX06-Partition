@@ -18,7 +18,7 @@ UnidirectionalIterator partition(UnidirectionalIterator first, UnidirectionalIte
 
     for (UnidirectionalIterator i = next(first); i != last; ++i) {
         if (*i <= pivot) {
-            std::iter_swap(i, first);
+            iter_swap(i, first);
             ++first;
         }
     }
