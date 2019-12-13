@@ -14,14 +14,12 @@ namespace edu { namespace vcccd { namespace vc { namespace csv15 {
 template <typename UnidirectionalIterator, typename Type>
 UnidirectionalIterator partition(UnidirectionalIterator first, UnidirectionalIterator last, const Type &pivot) {
     // Put your partitioning code here
-    auto p = first;
-    for(; first != last;){
-        if(*p <= pivot){
-            swap(p,first);
-            ++p;
+    if (first == last) return first;
+
+    for (UnidirectionalIterator i = next(first); i != last; ++i) {
+        if (*i <= pivot) {
+            std::iter_swap(i, first);
             ++first;
-        }else{
-            ++p;
         }
     }
     return first;
