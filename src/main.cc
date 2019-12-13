@@ -7,10 +7,11 @@
 #include <algorithm>
 #include <vector>
 
-#include "algorithm.h"
+//#include "algorithm.h"
+#include "../include/algorithm.h"
 
 int main(int argc, char *argv[]) {
-    std::vector<int> ints{10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    std::vector<int> ints{10,9,8,7,6,5,4,3,2,1};
 
     auto pivot = edu::vcccd::vc::csv15::partition(ints.begin(), ints.end(), 5);
     for (int val: ints) {
@@ -22,6 +23,7 @@ int main(int argc, char *argv[]) {
     } else {
         std::cout << "non-partitioned" << std::endl;
     }
+
 
     return EXIT_SUCCESS;
 }

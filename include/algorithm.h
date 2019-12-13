@@ -5,13 +5,25 @@
 #ifndef EX05_HASHTABLE_ALGORITHM_H
 #define EX05_HASHTABLE_ALGORITHM_H
 
-#include <algorithm>
+//#include <algorithm>
+#include "../include/algorithm.h"
+#include <iostream>
+using namespace std;
 
 namespace edu { namespace vcccd { namespace vc { namespace csv15 {
 template <typename UnidirectionalIterator, typename Type>
 UnidirectionalIterator partition(UnidirectionalIterator first, UnidirectionalIterator last, const Type &pivot) {
     // Put your partitioning code here
-
+    auto p = first;
+    for(; first != last;){
+        if(*p <= pivot){
+            swap(p,first);
+            ++p;
+            ++first;
+        }else{
+            ++p;
+        }
+    }
     return first;
 }
 }}}}

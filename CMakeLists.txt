@@ -7,6 +7,7 @@ set(SOURCE_PREFIX "partition")
 set(EXEC_NAME "Partition")
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "-Wreturn-type -Werror")
+add_executable(EX06-Partition include/algorithm.h src/main.cc)
 
 if(EXISTS ${CMAKE_HOME_DIRECTORY}/csv15-lib/CMakeLists.txt)
     include(csv15-lib/CMakeLists.txt)
