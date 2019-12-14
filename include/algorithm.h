@@ -14,10 +14,12 @@ namespace edu { namespace vcccd { namespace vc { namespace csv15 {
 template <typename UnidirectionalIterator, typename Type>
 UnidirectionalIterator partition(UnidirectionalIterator first, UnidirectionalIterator last, const Type &pivot) {
     // Put your partitioning code here
-    if (first == last) return first;
+    if (first == last) {
+        return first;
+    }
 
     for (UnidirectionalIterator i = next(first); i != last; ++i) {
-        if (*i <= pivot) {
+        if (*i < pivot) {
             iter_swap(i, first);
             ++first;
         }
