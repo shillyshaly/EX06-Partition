@@ -19,7 +19,7 @@ UnidirectionalIterator partition(UnidirectionalIterator first, UnidirectionalIte
     }
 
     for (UnidirectionalIterator i = next(first); i != last; ++i) {
-        if (*i < pivot) {
+        if (*i <= pivot) {
             iter_swap(i, first);
             ++first;
         }
